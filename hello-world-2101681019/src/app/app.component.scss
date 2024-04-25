@@ -1,0 +1,22 @@
+.appearance {
+    .item {
+      margin-bottom: 2px;
+      width: 50%;
+  
+      .header {
+        padding: 12px;
+        background-color: #ADD8E6;
+        color: black;
+      }
+  
+      .content-of-appearance {
+        padding: 2px;
+        background-color: azure;
+        display: none;
+  
+        &.expanded {
+          display: block;
+        }
+      }
+    }
+  }

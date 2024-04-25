@@ -1,15 +1,19 @@
-<div>
-  <p>Здравейте! Казвам се Калина Керменова и съм студент, 3-ти курс, специалност Софтуерни технологии и дизайн в Пловдивски университет "Паисий Хилендарски", както и фрийланс Графичен дизайнер за момента.</p>
-  <p>Аз съм от малък град, наречен Мадан, който се намира в красивата планина Родопи.</p>
-  <p>Моите хобита и интереси са:</p>
-  <ul>
-    <li>Графичен дизайн</li>
-    <li>Разходки сред природата</li>
-    <li>Народни танци</li>
-    <li>Рисуване</li>
-  </ul>
-  <p>Линк към Любимият ми YouTube канал, от който се уча на много нови неща:</p>
-  <a href="https://www.youtube.com/@GloryArtDraws">GloryArtDraws</a>
-  <p>В моя канал показвам туториали за работа с различни програми.</p>
-  <p>Аз съм креативен човек, който обича да твори и да бъде сред природата.</p>
+<div class="appearance">
+  <div
+    class="item"
+    *ngFor="let item of items; let i = index"
+    (click)="toggleAppearance(i)"
+  >
+    <div class="header">{{ item.header }}</div>
+    <div class="content-of-appearance" [class.expanded]="selectedIndex === i">
+      <p *ngIf="!item.type" class="content">{{ item.content }}</p>
+      <a
+        *ngIf="item.type === 'link'"
+        href="{{ item.content }}"
+        target="_blank"
+        class="content"
+        >{{ item.content }}</a
+      >
+    </div>
   </div>
+</div>
